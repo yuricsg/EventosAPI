@@ -1,0 +1,21 @@
+create table eventos(
+	id uuid not null primary key,
+	nome VARCHAR(255) NOT NULL,
+	descricao TEXT,
+    data_hora_inicio TIMESTAMP NOT NULL,
+    data_hora_fim TIMESTAMP NOT NULL,
+    max_participantes INT NOT NULL,
+    palestrante VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE participantes (
+    id uuid not null PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE inscricoes (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    evento_id UUID NOT NULL,
+    FOREIGN KEY (evento_id) REFERENCES eventos(id) ON DELETE CASCADE
+);
