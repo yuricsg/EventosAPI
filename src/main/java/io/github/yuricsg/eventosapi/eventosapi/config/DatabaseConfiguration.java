@@ -22,7 +22,7 @@ public class DatabaseConfiguration {
     String driver;
 
 
-    @Bean
+    //@Bean
     public DataSource dataSource(){
 
         DriverManagerDataSource ds = new DriverManagerDataSource();
