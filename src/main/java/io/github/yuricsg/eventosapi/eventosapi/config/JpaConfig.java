@@ -24,7 +24,7 @@ public class JpaConfig {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(dataSource);
         emf.setJpaVendorAdapter(jpaVendorAdapter);
-        emf.setPackagesToScan("io.github.yuricsg.eventosapi.eventosapi.entities"); 
+        emf.setPackagesToScan("io.github.yuricsg.eventosapi.eventosapi.entities");
         return emf;
     }
 }
